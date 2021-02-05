@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"*.h": "c",
+		"*.html": "html",
 		"array": "c",
 		"*.tcc": "c",
 		"deque": "c",
@@ -44,6 +45,8 @@
 		"sstream": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"list": "cpp",
+		"stack": "cpp"
 	}
 }

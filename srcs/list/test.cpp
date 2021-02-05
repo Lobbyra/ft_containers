@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:59:40 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/01/25 17:36:37 by jecaudal         ###   ########.fr       */
+/*   Created: 2021/02/01 15:47:01 by jecaudal          #+#    #+#             */
+/*   Updated: 2021/02/02 18:27:42 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "list.hpp"
+#include <list>
 
-namespace ft
+int		main(int argc, char **argv)
 {
+	ft::list<int> lst_num1(10, 10);
+	ft::list<int> lst_num2(lst_num1);
 
-template<bool, class T = void>
-struct enable_if {};
-
-template<class T>
-struct enable_if<true, T> { typedef T type; };
-
+	std::cout << lst_num2 << std::endl;
+	return (0);
 }
-
-#endif

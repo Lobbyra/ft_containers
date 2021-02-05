@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   print_functions.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 15:59:40 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/01/25 17:36:37 by jecaudal         ###   ########.fr       */
+/*   Created: 2021/02/04 14:47:16 by jecaudal          #+#    #+#             */
+/*   Updated: 2021/02/05 10:36:19 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include <iostream>
+#include "colors.hpp"
 
-namespace ft
+void	print_header(std::string content)
 {
-
-template<bool, class T = void>
-struct enable_if {};
-
-template<class T>
-struct enable_if<true, T> { typedef T type; };
-
+	std::cout << COLOR_WHITE_(content) << std::endl;
 }
-
-#endif
