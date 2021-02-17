@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 10:55:10 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 09:36:21 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 14:14:25 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -276,7 +276,7 @@ static void	test_iterator_std(void)
 
 	std::cout << std::endl;
 
-	std::cout << "*(lst.begin()) = " << *(lst.begin()) << std::endl;
+	std::cout << "*(lst.begin()) = " << *(lst.begin()) << std::endl << std::endl;
 
 	std::cout << "# ITERATOR OVERLOADS #" << std::endl;
 
@@ -454,12 +454,6 @@ static void	test_operator_over_ite_std(void)
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl;
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl;
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl << std::endl;
-
-	std::cout << "# operator->() #" << std::endl << std::endl;
-
-	std::cout << "lst.begin().operator->() = " << lst.begin().operator->() << std::endl;
-	std::cout << "it_begin.operator->() = " << it_begin.operator->() << std::endl;
-	std::cout << "it_end.operator->() = " << it_end.operator->() << std::endl;
 }
 
 static void	test_operator_over_ite(void)
@@ -500,12 +494,6 @@ static void	test_operator_over_ite(void)
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl;
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl;
 	std::cout << "*(it_begin++) = " << std::boolalpha << *(it_begin++) << std::endl << std::endl;
-
-	std::cout << "# operator->() #" << std::endl << std::endl;
-
-	std::cout << "lst.begin().operator->() = " << lst.begin().operator->() << std::endl;
-	std::cout << "it_begin.operator->() = " << it_begin.operator->() << std::endl;
-	std::cout << "it_end.operator->() = " << it_end.operator->() << std::endl;
 
 	test_operator_over_ite_std();
 }
@@ -771,37 +759,95 @@ static void	test_modifiers_one(void)
 
 	test_modifiers_one_std();
 
-	// std::cout << "# SWAP #" << std::endl;
-	// ft::list<std::string> letters;
-
-	// letters.push_back("A");
-	// letters.push_back("B");
-	// letters.push_back("C");
-	// letters.push_back("D");
-	// letters.push_back("E");
-	// letters.push_back("F");
-	// letters.push_back("G");
-
-	// ft::list<std::string> digits;
-	// digits.push_back("0");
-	// digits.push_back("1");
-	// digits.push_back("2");
-	// digits.push_back("3");
-	// digits.push_back("4");
-	// digits.push_back("5");
-	// digits.push_back("6");
-	// digits.push_back("7");
-	// digits.push_back("8");
-	// digits.push_back("9");
-
-	// std::cout << "For a string list letters = " << letters << std::endl;
-	// std::cout << "letters.size() = " << letters.size() << std::endl << std::endl;
-
-	// std::cout << "For a string list digits = " << digits << std::endl;
-	// std::cout << "digits.size() = " << digits.size() << std::endl << std::endl;
-
 }
 
+static void	test_modifiers_two_std(void)
+{
+	std::cout << "#### STD MODIFIERS PART TWO ####" << std::endl;
+	std::cout << "#### ERASE ####" << std::endl;
+	std::cout << "#- ONE ELEMENT -#" << std::endl;
+
+	std::list<std::string>	alien_hidden;
+
+	alien_hidden.push_back("👽");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("👽");
+	alien_hidden.push_back("👽");
+	alien_hidden.push_back("👽");
+	alien_hidden.push_back("👽");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("🎅");
+	alien_hidden.push_back("👽");
+
+	std::cout << "For a string vector alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "// Remove the begining alien" << std::endl;
+	std::cout << "alien_hidden.erase(alien_hidden.begin());" << std::endl;
+	alien_hidden.erase(alien_hidden.begin());
+	std::cout << "Now alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "// Remove the end alien" << std::endl;
+	std::cout << "alien_hidden.erase(--alien_hidden.end());" << std::endl;
+	alien_hidden.erase(--alien_hidden.end());
+	std::cout << "Now alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "#- RANGE -#" << std::endl;
+
+	std::cout << "// Remove the group of alien" << std::endl;
+	std::list<std::string>::iterator it_first_alien_grp = alien_hidden.begin();
+	std::list<std::string>::iterator it_last_alien_grp;
+	it_first_alien_grp++;
+	it_first_alien_grp++;
+	it_first_alien_grp++;
+	it_last_alien_grp = it_first_alien_grp;
+	it_last_alien_grp++;
+	it_last_alien_grp++;
+	it_last_alien_grp++;
+
+	std::cout << "alien_hidden.erase(it_first_alien_grp, ++it_last_alien_grp);" << std::endl;
+	alien_hidden.erase(it_first_alien_grp, ++it_last_alien_grp);
+	std::cout << "Now alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "#### RESIZE ####" << std::endl;
+
+	std::cout << "// let's add some Santa girls with the resize function !" << std::endl;
+	alien_hidden.resize(16, "🤶");
+	std::cout << "alien_hidden.resize(16, \"🤶\")" << std::endl;
+	std::cout << "Now alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "As there is only one Santa claus and one Santa girl :" << std::endl;
+	std::cout << "alien_hidden.resize(1, \"🎅\")" << std::endl;
+	std::cout << "alien_hidden.resize(2, \"🤶\")" << std::endl;
+	alien_hidden.resize(1, "🎅");
+	alien_hidden.resize(2, "🤶");
+	std::cout << "Now alien_hidden = " \
+			  << alien_hidden << std::endl << std::endl;
+
+	std::cout << "#### SWAP ####" << std::endl;
+
+	std::list<std::string> ticks(5, "✅");
+	std::list<std::string> cross(5, "❌");
+
+	std::cout << "For a string list of ticks : " << ticks << std::endl;
+	std::cout << "For a string list of cross : " << cross << std::endl << std::endl;
+
+	std::cout << "// Now lets swap it" << std::endl;
+	std::cout << "ticks.swap(cross);" << std::endl << std::endl;
+	ticks.swap(cross);
+
+	std::cout << "Now list of ticks : " << ticks << std::endl;
+	std::cout << "Now list of cross : " << cross << std::endl << std::endl;
+}
 static void	test_modifiers_two(void)
 {
 	std::cout << "#### FT MODIFIERS PART TWO ####" << std::endl;
@@ -888,6 +934,8 @@ static void	test_modifiers_two(void)
 
 	std::cout << "Now list of ticks : " << ticks << std::endl;
 	std::cout << "Now list of cross : " << cross << std::endl << std::endl;
+
+	test_modifiers_two_std();
 }
 
 class	potato

@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:09:50 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 09:59:19 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 12:36:40 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,15 @@ public:
 		_size_filled = n;
 	};
 
-	virtual ~vector() { this->clear(); };
+	virtual ~vector()
+	{
+		this->clear();
+		if (_size_alloc > 0)
+		{
+			_alloc.deallocate(_ptr, _size_alloc);
+			_size_alloc = 0;
+		}
+	};
 
 	typedef typename ft::vectorIterator<T>						iterator;
 	typedef typename ft::vectorConstIterator<T>					const_iterator;
@@ -163,14 +171,12 @@ public:
 
 	void clear()
 	{
-		if (_size_alloc > 0)
+		if (_size_filled > 0)
 		{
 			for (iterator it = this->begin(); it != this->end(); it++)
 				_alloc.destroy(&(*it));
-			_alloc.deallocate(_ptr, _size_alloc);
-			_size_alloc = 0;
+			_size_filled = 0;
 		}
-		_size_filled = 0;
 	};
 
 	iterator	insert(iterator pos, const T& value)

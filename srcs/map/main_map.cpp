@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:03:12 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 12:16:20 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 14:57:36 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,8 +363,6 @@ static void	test_erase_by_key_std(void)
 
 	print_header("STD ERASE BY KEY TEST");
 
-	std::cout << "Here is a representation of the binary tree :" << std::endl << std::endl;
-
 	map_family["grand_mother"] = 99;
 	map_family["Dad"] = 70;
 	map_family["uncle"] = 60;
@@ -379,42 +377,28 @@ static void	test_erase_by_key_std(void)
 	map_family["uo_lilcousin"] = 1;
 	map_family["B_lilson"] = 15;
 
-	std::cout << "map_family[\"grand_mother\"] = 99;" << std::endl;
-	std::cout << "map_family[\"Dad\"] = 70;" << std::endl;
-	std::cout << "map_family[\"uncle\"] = 60;" << std::endl;
-	std::cout << "map_family[\"A_me\"] = 45;" << std::endl;
-	std::cout << "map_family[\"G_brother\"] = 35;" << std::endl;
-	std::cout << "map_family[\"s_cousin\"] = 40;" << std::endl;
-	std::cout << "map_family[\"v_cousin\"] = 25;" << std::endl;
-	std::cout << "map_family[\"9_son\"] = 20;" << std::endl;
-	std::cout << "map_family[\"C_daughter\"] = 25;" << std::endl;
-	std::cout << "map_family[\"Z_nethew\"] = 8;" << std::endl;
-	std::cout << "map_family[\"q_lilcousin\"] = 15;" << std::endl;
-	std::cout << "map_family[\"uo_lilcousin\"] = 1;" << std::endl;
-	std::cout << "map_family[\"B_lilson\"] = 15;" << std::endl << std::endl;
-
 	std::cout << "Our family is :" << std::endl;
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a leaf : map_family.erase(\"G_brother\")" << std::endl << std::endl;
 	map_family.erase("G_brother");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a one leaf branch : map_family.erase(\"C_daughter\")" << std::endl << std::endl;
 	map_family.erase("C_daughter");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a two leaf branch : map_family.erase(\"uncle\")" << std::endl << std::endl;
 	map_family.erase("uncle");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase the root : map_family.erase(\"grand_mother\")" << std::endl << std::endl;
 	map_family.erase("grand_mother");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 }
 
@@ -468,42 +452,28 @@ static void	test_erase_by_key(void)
 	map_family["uo_lilcousin"] = 1;
 	map_family["B_lilson"] = 15;
 
-	std::cout << "map_family[\"grand_mother\"] = 99;" << std::endl;
-	std::cout << "map_family[\"Dad\"] = 70;" << std::endl;
-	std::cout << "map_family[\"uncle\"] = 60;" << std::endl;
-	std::cout << "map_family[\"A_me\"] = 45;" << std::endl;
-	std::cout << "map_family[\"G_brother\"] = 35;" << std::endl;
-	std::cout << "map_family[\"s_cousin\"] = 40;" << std::endl;
-	std::cout << "map_family[\"v_cousin\"] = 25;" << std::endl;
-	std::cout << "map_family[\"9_son\"] = 20;" << std::endl;
-	std::cout << "map_family[\"C_daughter\"] = 25;" << std::endl;
-	std::cout << "map_family[\"Z_nethew\"] = 8;" << std::endl;
-	std::cout << "map_family[\"q_lilcousin\"] = 15;" << std::endl;
-	std::cout << "map_family[\"uo_lilcousin\"] = 1;" << std::endl;
-	std::cout << "map_family[\"B_lilson\"] = 15;" << std::endl << std::endl;
-
-	std::cout << "Our family is :" << std::endl;
-	std::cout << map_family;
+	std::cout << "Our family is :" << std::endl << std::endl;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a leaf : map_family.erase(\"G_brother\")" << std::endl << std::endl;
 	map_family.erase("G_brother");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a one leaf branch : map_family.erase(\"C_daughter\")" << std::endl << std::endl;
 	map_family.erase("C_daughter");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase a two leaf branch : map_family.erase(\"uncle\")" << std::endl << std::endl;
 	map_family.erase("uncle");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	std::cout << "erase the root : map_family.erase(\"grand_mother\")" << std::endl << std::endl;
 	map_family.erase("grand_mother");
 
-	std::cout << map_family;
+	std::cout << map_family << std::endl;
 
 	test_erase_by_key_std();
 }
@@ -716,11 +686,13 @@ static void	test_clear_std(void)
 	world_records_apnea["Stepanek"] = 8.06;
 
 	std::cout << "For a string double map world_records_apnea :" << std::endl << world_records_apnea << std::endl;
+	std::cout << "world_records_apnea.size() : " << std::endl << world_records_apnea.size() << std::endl << std::endl;
 
 	world_records_apnea.clear();
 	std::cout << "world_records_apnea.clear();" << std::endl << std::endl;
 
 	std::cout << "Now world_records_apnea : " << std::endl << world_records_apnea << std::endl;
+	std::cout << "world_records_apnea.size() : " << std::endl << world_records_apnea.size() << std::endl << std::endl;
 
 }
 
@@ -738,11 +710,13 @@ static void	test_clear(void)
 	world_records_apnea["Stepanek"] = 8.06;
 
 	std::cout << "For a string double map world_records_apnea :" << std::endl << world_records_apnea << std::endl;
+	std::cout << "world_records_apnea.size() : " << std::endl << world_records_apnea.size() << std::endl << std::endl;
 
 	world_records_apnea.clear();
 	std::cout << "world_records_apnea.clear();" << std::endl << std::endl;
 
 	std::cout << "Now world_records_apnea : " << std::endl << world_records_apnea << std::endl << std::endl;
+	std::cout << "world_records_apnea.size() : " << std::endl << world_records_apnea.size() << std::endl << std::endl;
 
 	test_clear_std();
 }
@@ -1153,6 +1127,8 @@ void 	test_swap(void)
 
 	std::cout << "banana_box :" << std::endl << banana_box << std::endl;
 	std::cout << "apple_box :" << std::endl << apple_box << std::endl << std::endl;
+
+	test_swap_std();
 }
 
 static void	test_key_compare_std(void)
@@ -1172,15 +1148,26 @@ static void	test_key_compare_std(void)
 	mymap['g']=700;
 	mymap['h']=800;
 
-	std::cout << "mymap contains: " << std::endl;
+	std::cout << "For a <char, int> \"mymap\" map : " << std::endl << mymap << std::endl;
+	std::cout << "For a comparaison object \"mycomp\" = mymap.key_comp()" << std::endl << std::endl;
+
+	std::cout << "For a char as highest key in map : char highest = mymap.rbegin()->first;" << std::endl << std::endl;
 
 	char highest = mymap.rbegin()->first;		 // key value of last element
 
 	std::map<char,int>::iterator it = mymap.begin();
 
+	std::cout << "iterator it = mymap.begin();" << std::endl << std::endl;
+
+	std::cout << "while (mycomp((*it).first, highest) == true)" << std::endl;
+	std::cout << "    std::cout << it->first << \" => \" << it->second << std::endl;" << std::endl;
+	std::cout << "    it++;" << std::endl << std::endl;
+
+	std::cout << "=" << std::endl << std::endl;
+
 	while (mycomp((*it).first, highest))
 	{
-		std::cout << it->first << " => " << it->second << '\n';
+		std::cout << it->first << " => " << it->second << std::endl;
 		it++;
 	}
 }
@@ -1202,15 +1189,26 @@ static void	test_key_compare(void)
 	mymap['g']=700;
 	mymap['h']=800;
 
-	std::cout << "mymap contains: " << std::endl;
+	std::cout << "For a <char, int> \"mymap\" map : " << std::endl << mymap << std::endl;
+	std::cout << "For a comparaison object \"mycomp\" = mymap.key_comp()" << std::endl << std::endl;
+
+	std::cout << "For a char as highest key in map : char highest = mymap.rbegin()->first;" << std::endl << std::endl;
 
 	char highest = mymap.rbegin()->first;		 // key value of last element
 
 	ft::map<char,int>::iterator it = mymap.begin();
 
+	std::cout << "iterator it = mymap.begin();" << std::endl << std::endl;
+
+	std::cout << "while (mycomp((*it).first, highest) == true)" << std::endl;
+	std::cout << "    std::cout << it->first << \" => \" << it->second << std::endl;" << std::endl;
+	std::cout << "    it++;" << std::endl << std::endl;
+
+	std::cout << "=" << std::endl << std::endl;
+
 	while (mycomp((*it).first, highest))
 	{
-		std::cout << it->first << " => " << it->second << '\n';
+		std::cout << it->first << " => " << it->second << std::endl;
 		it++;
 	}
 
@@ -1225,20 +1223,29 @@ static void	test_value_compare_std(void)
 
 	std::map<char,int> mymap;
 
-	mymap['a']=100;
-	mymap['b']=200;
-	mymap['c']=300;
-	mymap['d']=400;
-	mymap['e']=500;
-	mymap['f']=600;
-	mymap['g']=700;
-	mymap['h']=800;
+	mymap['h']=100;
+	mymap['g']=200;
+	mymap['f']=300;
+	mymap['e']=400;
+	mymap['d']=500;
+	mymap['c']=600;
+	mymap['b']=700;
+	mymap['a']=800;
 
-	std::cout << "mymap contains: " << std::endl;
+	std::cout << "For a <char, int> \"mymap\" map : " << std::endl << mymap << std::endl;
+
+	std::cout << "For a char as highest pair in map : char highest = *(mymap.rbegin());" << std::endl << std::endl;
 
 	std::pair<char, int> highest = *(mymap.rbegin());
 
+	std::cout << "iterator it = mymap.begin();" << std::endl << std::endl;
 	std::map<char,int>::iterator it = mymap.begin();
+
+	std::cout << "while (mymap.value_comp()(*it, highest))" << std::endl;
+	std::cout << "    std::cout << it->first << \" => \" << it->second << std::endl;" << std::endl;
+	std::cout << "    it++;" << std::endl << std::endl;
+
+	std::cout << "=" << std::endl << std::endl;
 
 	while (mymap.value_comp()(*it, highest))
 	{
@@ -1255,20 +1262,29 @@ static void	test_value_compare(void)
 
 	ft::map<char,int> mymap;
 
-	mymap['a']=100;
-	mymap['b']=200;
-	mymap['c']=300;
-	mymap['d']=400;
-	mymap['e']=500;
-	mymap['f']=600;
-	mymap['g']=700;
-	mymap['h']=800;
+	mymap['h']=100;
+	mymap['g']=200;
+	mymap['f']=300;
+	mymap['e']=400;
+	mymap['d']=500;
+	mymap['c']=600;
+	mymap['b']=700;
+	mymap['a']=800;
 
-	std::cout << "mymap contains: " << std::endl;
+	std::cout << "For a <char, int> \"mymap\" map : " << std::endl << mymap << std::endl;
+
+	std::cout << "For a char as highest pair in map : char highest = *(mymap.rbegin());" << std::endl << std::endl;
 
 	ft::pair<char, int> highest = *(mymap.rbegin());
 
+	std::cout << "iterator it = mymap.begin();" << std::endl << std::endl;
 	ft::map<char,int>::iterator it = mymap.begin();
+
+	std::cout << "while (mymap.value_comp()(*it, highest))" << std::endl;
+	std::cout << "    std::cout << it->first << \" => \" << it->second << std::endl;" << std::endl;
+	std::cout << "    it++;" << std::endl << std::endl;
+
+	std::cout << "=" << std::endl << std::endl;
 
 	while (mymap.value_comp()(*it, highest))
 	{

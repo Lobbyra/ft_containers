@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:47:43 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 09:24:35 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 12:31:07 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1263,7 +1263,7 @@ static void	test_insert_std(void)
 	std::cout << "}" << std::endl << std::endl;
 
 	std::cout << "#- Insert at the end -#" << std::endl << std::endl;
-	v1.insert(v1.end(), "TUX GOOD BOY ");
+	v1.insert(v1.end(), "WIN SUKS ");
 	std::cout << "insert(v1.end(), \"WIN SUKS \")" << std::endl;
 
 	std::cout << "v1 now = ";
@@ -1439,7 +1439,7 @@ static void	test_insert(void)
 	std::cout << "}" << std::endl << std::endl;
 
 	std::cout << "#- Insert at the end -#" << std::endl << std::endl;
-	v1.insert(v1.end(), "TUX GOOD BOY ");
+	v1.insert(v1.end(), "WIN SUKS ");
 	std::cout << "insert(v1.end(), \"WIN SUKS \")" << std::endl;
 
 	std::cout << "v1 now = ";
