@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:03:12 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 16:40:51 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 17:55:18 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <vector>
 #include <iostream>
 #include "../test_tools/utils_tester.hpp"
-
-
 
 static void	test_operator_brackets_std(void)
 {
@@ -1276,6 +1274,31 @@ static void	test_value_compare(void)
 	test_value_compare_std();
 }
 
+static void	test_iterator_constructor_std(void)
+{
+	print_header("STD ITERATOR CONSTRUCTOR");
+
+	std::cout << "For std::map<std::string, std::string> map_countries" << std::endl;
+
+	std::map<std::string, std::string>	map_countries;
+
+	map_countries["New-york"] = "USA";
+	map_countries["Sydney"] = "Australia";
+	map_countries["Paris"] = "France";
+	map_countries["New-Delhi"] = "India";
+	map_countries["Berlin"] = "Germany";
+	map_countries["Brest"] = "France";
+	map_countries["Prague"] = "Czech Republic";
+	map_countries["Dublin"] = "Prague";
+
+	std::cout << "map_countries :" << std::endl << map_countries << std::endl;
+
+	std::map<std::string, std::string> cpy_map_countries(map_countries.begin(), map_countries.end());
+	std::cout << "std::map<std::string, std::string> cpy_map_countries(map_countries.begin(), map_countries.end());" << std::endl;
+
+	std::cout << "cpy_map_countries :" << std::endl << cpy_map_countries << std::endl;
+}
+
 static void	test_iterator_constructor(void)
 {
 	print_header("FT ITERATOR CONSTRUCTOR");
@@ -1299,6 +1322,8 @@ static void	test_iterator_constructor(void)
 	std::cout << "ft::map<std::string, std::string> cpy_map_countries(map_countries.begin(), map_countries.end());" << std::endl;
 
 	std::cout << "cpy_map_countries :" << std::endl << cpy_map_countries << std::endl;
+
+	test_iterator_constructor_std();
 }
 
 static void	test_operations_std(void)
