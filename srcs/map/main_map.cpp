@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:03:12 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 14:57:36 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 16:07:39 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,29 @@
 #include <vector>
 #include <iostream>
 #include "../test_tools/utils_tester.hpp"
+
+template <typename Tkey, typename Tvalue>
+std::ostream	&operator<<(std::ostream &o, std::pair<Tkey, Tvalue> const &i)
+{
+	std::cout << \
+	"key = " << i.first << ", value = " << i.second << " ";
+	return (o);
+};
+
+template <typename Tkey, typename Tvalue, class Compare = std::less<Tkey> >
+std::ostream	&operator<<(std::ostream &o, ft::map<Tkey, Tvalue, Compare> &i)
+{
+	if (i.size() == 0)
+	{
+		o << "{}";
+		return (o);
+	}
+	for (typename ft::map<Tkey, Tvalue, Compare>::const_iterator it = i.begin();
+		 it != i.end();
+		 it++)
+		o << *it << std::endl;
+	return (o);
+};
 
 template <typename Tkey, typename Tvalue>
 std::ostream	&operator<<(std::ostream &o, std::map<Tkey, Tvalue> &i)
@@ -132,14 +155,6 @@ static void	test_operator_brackets(void)
 
 	test_operator_brackets_std();
 }
-
-template <typename Tkey, typename Tvalue>
-std::ostream	&operator<<(std::ostream &o, std::pair<Tkey, Tvalue> const &i)
-{
-	std::cout << \
-	"key = " << i.first << ", value = " << i.second << " ";
-	return (o);
-};
 
 static void	test_iterator_std(void)
 {
@@ -740,8 +755,8 @@ static void	test_find_std(void)
 
 	std::cout << "random_tree : " << std::endl << random_tree << std::endl;
 
-	std::map<int, int>::iterator it = random_tree.find(4242442424);
-	std::cout << "std::map<int, int>::iterator it = random_tree.find(4242442424);" << std::endl << std::endl;
+	std::map<int, int>::iterator it = random_tree.find(42442424);
+	std::cout << "std::map<int, int>::iterator it = random_tree.find(42442424);" << std::endl << std::endl;
 
 	std::cout << "it == random_tree.end() : " << std::boolalpha << (it == random_tree.end()) << std::endl << std::endl;
 
@@ -770,8 +785,8 @@ static void	test_find(void)
 
 	std::cout << "random_tree : " << std::endl << random_tree << std::endl;
 
-	ft::map<int, int>::iterator it = random_tree.find(4242442424);
-	std::cout << "ft::map<int, int>::iterator it = random_tree.find(4242442424);" << std::endl << std::endl;
+	ft::map<int, int>::iterator it = random_tree.find(42442424);
+	std::cout << "ft::map<int, int>::iterator it = random_tree.find(42442424);" << std::endl << std::endl;
 
 	std::cout << "it == random_tree.end() : " << std::boolalpha << (it == random_tree.end()) << std::endl << std::endl;
 

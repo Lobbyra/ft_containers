@@ -6,7 +6,7 @@
 #    By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/17 08:45:26 by jecaudal          #+#    #+#              #
-#    Updated: 2021/02/17 09:28:03 by jecaudal         ###   ########.fr        #
+#    Updated: 2021/02/17 16:07:20 by jecaudal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,19 +21,19 @@ SRCS		=	test_menu.cpp				\
 				srcs/test_tools/menu.cpp	\
 				srcs/test_tools/print_functions.cpp
 
-CC			=	g++
+CXX			=	clang++
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-CFLAGS		+=	-Wall -Werror -Wextra
+CXXFLAGS	+=	-Wall -Wextra
 
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+				$(CXX) -o $(NAME) $(CFLAGS) $(OBJS)
 
 san			:	$(OBJS)
-				$(CC) -o $(NAME) -fsanitize=address $(CFLAGS) $(OBJS)
+				$(CXX) -o $(NAME) -fsanitize=address $(CFLAGS) $(OBJS)
 
 clean		:
 				rm -rf $(OBJS)

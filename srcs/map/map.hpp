@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 09:48:49 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 12:19:01 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:42:40 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@
 
 namespace ft
 {
+
+template <typename T>
+struct	less
+{
+	bool operator()(const T &lhs, const T &rhs) const
+	{
+		return (lhs < rhs);
+	}
+};
 
 template <typename Tkey, typename Tvalue>
 class pair
@@ -176,7 +185,7 @@ public:
 	typedef Compare	key_compare;
 
 	typedef value_type &	reference;
-	typedef const reference	const_reference;
+	typedef reference		const_reference;
 	typedef value_type *	pointer;
 	typedef const pointer	const_pointer;
 
@@ -567,7 +576,7 @@ public:
 	typedef Compare	key_compare;
 
 	typedef value_type &	reference;
-	typedef const reference	const_reference;
+	typedef reference		const_reference;
 	typedef value_type *	pointer;
 	typedef const pointer	const_pointer;
 
@@ -981,7 +990,7 @@ public:
 	typedef std::allocator<value_type>	allocator_type;
 
 	typedef value_type &	reference;
-	typedef const reference	const_reference;
+	typedef reference	const_reference;
 	typedef value_type *	pointer;
 	typedef const pointer	const_pointer;
 
@@ -1531,21 +1540,6 @@ private:
 	node_ptr		_root;
 	key_compare		_comp;
 	allocator_type	_alloc;
-};
-
-template <typename Tkey, typename Tvalue, typename Compare = std::less<Tkey>>
-std::ostream	&operator<<(std::ostream &o, map<Tkey, Tvalue, Compare> &i)
-{
-	if (i.size() == 0)
-	{
-		o << "{}";
-		return (o);
-	}
-	for (typename ft::map<Tkey, Tvalue, Compare>::const_iterator it = i.begin();
-		 it != i.end();
-		 it++)
-		o << *it << std::endl;
-	return (o);
 };
 
 }
