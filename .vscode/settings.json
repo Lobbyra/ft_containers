@@ -47,6 +47,7 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp",
 		"list": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"map": "cpp"
 	}
 }

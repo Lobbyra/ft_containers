@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 11:33:37 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/03 16:14:20 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:04:36 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,9 +137,9 @@ public:
 	typedef Node<T> const *				const_pointer;
 	typedef typename std::ptrdiff_t	difference_type;
 
-	listIterator(void) {};
-	listIterator(pointer ptr) { _ptr = ptr; };
-	listIterator(const listIterator &src) { _ptr = src._ptr; };
+	listIterator(void) : _ptr(NULL) {};
+	listIterator(pointer ptr) : _ptr(ptr) { };
+	listIterator(const listIterator &src) : _ptr(src._ptr) { };
 
 	virtual ~listIterator() {};
 

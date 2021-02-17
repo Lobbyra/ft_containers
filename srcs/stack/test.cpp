@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/01 15:47:01 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 12:21:42 by jecaudal         ###   ########.fr       */
+/*   Created: 2021/02/17 12:22:06 by jecaudal          #+#    #+#             */
+/*   Updated: 2021/02/17 12:22:27 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.hpp"
-#include <list>
+#include "stack.hpp"
 
 int		main(int argc, char **argv)
 {

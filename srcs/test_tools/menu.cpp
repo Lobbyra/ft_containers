@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 14:55:55 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/05 10:35:36 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:53:57 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,12 @@ void	menu(std::vector<void(*)()> lst_funs, std::vector<std::string> lst_messages
 		catch (std::exception &e) {	std::cerr << e.what() << std::endl; }
 
 		// ENDING LOOP WAIT
-		std::cout << std::endl <<"Press enter to select another test" << std::endl;
-		std::getline(std::cin, input_line);
-		clearscreen();
+		if (title != "TESTER")
+		{
+			std::cout << std::endl <<"Press enter to select another test" << std::endl;
+			std::getline(std::cin, input_line);
+		}
+		else
+			clearscreen();
 	}
 }

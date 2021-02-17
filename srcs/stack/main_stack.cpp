@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 12:20:44 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/05 14:47:48 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:13:43 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "../test_tools/utils_tester.hpp"
 #include "stack.hpp"
 
-void	test_non_member_ope_std()
+static void	test_non_member_ope_std()
 {
 	print_header("STD TEST NON MEMBER OPE");
 
@@ -88,7 +88,7 @@ void	test_non_member_ope_std()
 
 }
 
-void	test_non_member_ope()
+static void	test_non_member_ope()
 {
 	print_header("FT TEST NON MEMBER OPE");
 
@@ -161,7 +161,7 @@ void	test_non_member_ope()
 	test_non_member_ope_std();
 }
 
-void	test_push_std()
+static void	test_push_std()
 {
 	print_header("STD TEST FUNCTIONS");
 
@@ -206,7 +206,7 @@ void	test_push_std()
 
 }
 
-void	test_push()
+static void	test_push()
 {
 	print_header("FT TEST FUNCTIONS");
 
@@ -252,7 +252,7 @@ void	test_push()
 	test_push_std();
 }
 
-int		main_stack(void)
+void	main_stack(void)
 {
 	std::vector<void(*)(void)>	lst_funs_ptr;
 	std::vector<std::string>	lst_funs_description;
@@ -263,9 +263,5 @@ int		main_stack(void)
 	lst_funs_ptr.push_back(test_non_member_ope);
 	lst_funs_description.push_back("1 : test non member operationnal");
 
-	menu(lst_funs_ptr, lst_funs_description, "QUEUE");
-
-	return (0);
+	menu(lst_funs_ptr, lst_funs_description, "STACK");
 }
-
-int		main(void) { return (main_stack()); }

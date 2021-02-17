@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 10:09:50 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/04 12:02:47 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:59:19 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,6 +167,8 @@ public:
 		{
 			for (iterator it = this->begin(); it != this->end(); it++)
 				_alloc.destroy(&(*it));
+			_alloc.deallocate(_ptr, _size_alloc);
+			_size_alloc = 0;
 		}
 		_size_filled = 0;
 	};
@@ -255,7 +257,7 @@ public:
 		return (pos);
 	};
 
-	iterator erase(iterator first, iterator last)
+	iterator	erase(iterator first, iterator last)
 	{
 		iterator temp(first);
 
@@ -267,7 +269,7 @@ public:
 		return (first);
 	};
 
-	void push_back(const T& value)
+	void	push_back(const T& value)
 	{
 		if (_size_alloc == 0)
 		{
@@ -280,7 +282,7 @@ public:
 		_size_filled++;
 	};
 
-	void pop_back()
+	void	pop_back()
 	{
 		if (_size_filled > 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:47:43 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/04 11:38:58 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:24:35 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,12 @@
 #include <iostream>
 #include "vector.hpp"
 
-int to_int(char const *s)
-{
-	if ( s == NULL || *s == '\0' )
-		throw std::invalid_argument("null or empty string argument");
-
-	bool negate = (s[0] == '-');
-	if ( *s == '+' || *s == '-' )
-		++s;
-
-	if ( *s == '\0')
-		throw std::invalid_argument("sign character only.");
-
-	int result = 0;
-	while(*s)
-	{
-		if ( *s < '0' || *s > '9' )
-			throw std::invalid_argument("invalid input string");
-		result = result * 10 - (*s - '0');  //assume negative number
-		++s;
-	}
-	return negate ? result : -result; //-result is positive!
-}
-
-void clearscreen()
+static void clearscreen()
 {
 	std::cout << std::string( 100, '\n' );
 }
 
-void	test_push_std(void)
+static void	test_push_std(void)
 {
 	std::vector<int> test;
 
@@ -82,7 +59,7 @@ void	test_push_std(void)
 	// std::cout << test.max_size() << std::endl;
 }
 
-void	test_push(void)
+static void	test_push(void)
 {
 	ft::vector<int> test;
 
@@ -122,7 +99,7 @@ void	test_push(void)
 	test_push_std();
 }
 
-void	test_element_access_std(void)
+static void	test_element_access_std(void)
 {
 	std::vector<int> test;
 	std::cout << "## ELEMENT ACCESS STD DEMONSTRATION ##" << std::endl;
@@ -176,7 +153,7 @@ void	test_element_access_std(void)
 	std::cout << "######################################" << std::endl << std::endl;
 }
 
-void	test_element_access(void)
+static void	test_element_access(void)
 {
 	ft::vector<int> test;
 	std::cout << "## ELEMENT ACCESS FT DEMONSTRATION ##" << std::endl;
@@ -231,7 +208,7 @@ void	test_element_access(void)
 	test_element_access_std();
 }
 
-void	test_re_serve_size_std(void)
+static void	test_re_serve_size_std(void)
 {
 	std::cout << "## RESERVE RESIZE STD DEMONSTRATION ##" << std::endl;
 
@@ -277,7 +254,7 @@ void	test_re_serve_size_std(void)
 	std::cout << "#####################################" << std::endl << std::endl;
 }
 
-void	test_re_serve_size(void)
+static void	test_re_serve_size(void)
 {
 	std::cout << "## RESERVE RESIZE FT DEMONSTRATION ##" << std::endl;
 
@@ -324,7 +301,7 @@ void	test_re_serve_size(void)
 	test_re_serve_size_std();
 }
 
-void	test_pop_back_std(void)
+static void	test_pop_back_std(void)
 {
 	std::cout << "## POP BACK STD DEMONSTRATION ##" << std::endl;
 
@@ -443,7 +420,7 @@ void	test_pop_back_std(void)
 	std::cout << "#####################################" << std::endl << std::endl;
 }
 
-void	test_pop_back(void)
+static void	test_pop_back(void)
 {
 	std::cout << "## POP BACK FT DEMONSTRATION ##" << std::endl;
 
@@ -564,7 +541,7 @@ void	test_pop_back(void)
 	std::cout << "#####################################" << std::endl << std::endl;
 }
 
-void	test_iterator_incrementers_ft()
+static void	test_iterator_incrementers_ft()
 {
 	ft::vector<int>				v;
 	ft::vector<int>::iterator	it;
@@ -599,7 +576,7 @@ void	test_iterator_incrementers_ft()
 	std::cout << "*it = " << *it << std::endl << std::endl;
 }
 
-void	test_iterator_incrementers_std()
+static void	test_iterator_incrementers_std()
 {
 	std::vector<int>				v;
 	std::vector<int>::iterator	it;
@@ -666,7 +643,7 @@ void 	test_iterator_arithmetics_ft()
 	std::cout << "*(it - 5) = " << *(it - 5) << std::endl << std::endl;
 }
 
-void	test_iterator_arithmetics_std()
+static void	test_iterator_arithmetics_std()
 {
 	std::vector<int>				v;
 	std::vector<int>::iterator	it;
@@ -698,7 +675,7 @@ void	test_iterator_arithmetics_std()
 	std::cout << "*(it - 5) = " << *(it - 5) << std::endl << std::endl;
 }
 
-void	test_iterator_booleans_ft()
+static void	test_iterator_booleans_ft()
 {
 	ft::vector<int>				v;
 	ft::vector<int>::iterator	it;
@@ -742,7 +719,7 @@ void	test_iterator_booleans_ft()
 	std::cout << "it_end >= it_end is " << std::boolalpha << (it_end >= it_end) << std::endl << std::endl;
 }
 
-void	test_iterator_booleans_std()
+static void	test_iterator_booleans_std()
 {
 	std::vector<int>				v;
 	std::vector<int>::iterator	it;
@@ -787,7 +764,7 @@ void	test_iterator_booleans_std()
 	return ;
 }
 
-void	test_iterator_deref_std()
+static void	test_iterator_deref_std()
 {
 	std::vector<int>				v;
 	std::vector<int>::iterator	it;
@@ -856,7 +833,7 @@ void	test_iterator_deref_std()
 	std::cout << "cout *it_cpy = " << *it_cpy << std::endl << std::endl;
 }
 
-void	test_iterator_deref_ft()
+static void	test_iterator_deref_ft()
 {
 	ft::vector<int>				v;
 	ft::vector<int>::iterator	it;
@@ -928,7 +905,7 @@ void	test_iterator_deref_ft()
 	std::cout << "cout *it_cpy = " << *it_cpy << std::endl << std::endl;
 }
 
-void	test_iterator(void)
+static void	test_iterator(void)
 {
 	std::string input_line;
 
@@ -961,7 +938,7 @@ void	test_iterator(void)
 	test_iterator_deref_std();
 }
 
-void	test_reverse_iterator_std(void)
+static void	test_reverse_iterator_std(void)
 {
 	std::vector<int>	v;
 	std::vector<int>::reverse_iterator	it;
@@ -1003,7 +980,7 @@ void	test_reverse_iterator_std(void)
 	std::cout << "cout *(it + 4) = " << *(it + 4) << std::endl << std::endl;
 }
 
-void	test_reverse_iterator(void)
+static void	test_reverse_iterator(void)
 {
 	ft::vector<int>	v;
 	ft::vector<int>::reverse_iterator	it;
@@ -1046,7 +1023,7 @@ void	test_reverse_iterator(void)
 	test_reverse_iterator_std();
 }
 
-void	test_constructors_std(void)
+static void	test_constructors_std(void)
 {
 	std::cout << "#### STD PART CONSTRUCTORS ####" << std::endl;
 
@@ -1085,7 +1062,7 @@ void	test_constructors_std(void)
 		std::cout << *it << std::endl;
 }
 
-void	test_constructors(void)
+static void	test_constructors(void)
 {
 	std::cout << "#### FT PART CONSTRUCTORS ####" << std::endl;
 
@@ -1134,7 +1111,7 @@ void	test_constructors(void)
 	test_constructors_std();
 }
 
-void	test_assign_std(void)
+static void	test_assign_std(void)
 {
 	std::cout << "#### STD PART CONSTRUCTORS ####" << std::endl;
 
@@ -1189,7 +1166,7 @@ void	test_assign_std(void)
 	return ;
 }
 
-void	test_assign(void)
+static void	test_assign(void)
 {
 	std::cout << "#### FT PART CONSTRUCTORS ####" << std::endl;
 
@@ -1244,7 +1221,7 @@ void	test_assign(void)
 	test_assign_std();
 }
 
-void	test_insert_std(void)
+static void	test_insert_std(void)
 {
 	std::cout << "#### STD PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -1420,7 +1397,7 @@ void	test_insert_std(void)
 	std::cout << "}" << std::endl;
 }
 
-void	test_insert(void)
+static void	test_insert(void)
 {
 	std::cout << "#### FT PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -1598,7 +1575,7 @@ void	test_insert(void)
 	test_insert_std();
 }
 
-void	test_clear_erase_std(void)
+static void	test_clear_erase_std(void)
 {
 	std::cout << "#### STD PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -1706,7 +1683,7 @@ void	test_clear_erase_std(void)
 	return ;
 }
 
-void	test_clear_erase(void)
+static void	test_clear_erase(void)
 {
 	std::cout << "#### FT PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -1814,7 +1791,7 @@ void	test_clear_erase(void)
 	test_clear_erase_std();
 }
 
-void	test_swap_std(void)
+static void	test_swap_std(void)
 {
 	std::cout << "#### STD PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -1956,7 +1933,7 @@ void	test_swap_std(void)
 		std::cout << "}" << std::endl;
 }
 
-void	test_swap(void)
+static void	test_swap(void)
 {
 	std::cout << "#### FT PART CONSTRUCTORS ####" << std::endl << std::endl;
 
@@ -2100,7 +2077,7 @@ void	test_swap(void)
 	test_swap_std();
 }
 
-void	test_non_member_ope_std(void)
+static void	test_non_member_ope_std(void)
 {
 	std::cout << "#### STD NON-MEMBER OPERATORS TEST ####" << std::endl;
 	std::cout << "#- EQUAL & NON-EQUAL -#" << std::endl;
@@ -2172,7 +2149,7 @@ void	test_non_member_ope_std(void)
 
 }
 
-void	test_non_member_ope(void)
+static void	test_non_member_ope(void)
 {
 	std::cout << "#### FT NON-MEMBER OPERATORS TEST ####" << std::endl;
 	std::cout << "#- EQUAL & NON-EQUAL -#" << std::endl;
@@ -2245,7 +2222,7 @@ void	test_non_member_ope(void)
 	test_non_member_ope_std();
 }
 
-void	test_non_member_swap_std(void)
+static void	test_non_member_swap_std(void)
 {
 	std::cout << "#### FT NON-MEMBER SWAP ####" << std::endl;
 
@@ -2262,7 +2239,7 @@ void	test_non_member_swap_std(void)
 	std::cout << "v_nums_b : " << v_nums_b << std::endl << std::endl;
 }
 
-void	test_non_member_swap(void)
+static void	test_non_member_swap(void)
 {
 	std::cout << "#### FT NON-MEMBER SWAP ####" << std::endl;
 
@@ -2281,67 +2258,51 @@ void	test_non_member_swap(void)
 	test_non_member_swap_std();
 }
 
-int		main(void)
+#include "../test_tools/utils_tester.hpp"
+
+void	main_vector(void)
 {
-	std::string		input_line;
-	void (*f[])(void) =
-	{
-		test_push,
-		test_element_access,
-		test_re_serve_size,
-		test_pop_back,
-		test_iterator,
-		test_reverse_iterator,
-		test_constructors,
-		test_assign,
-		test_insert,
-		test_clear_erase,
-		test_swap,
-		test_non_member_ope,
-		test_non_member_swap
-	};
+	std::vector<void(*)(void)>	v_test_funs;
+	std::vector<std::string>	v_descriptions;
 
-	clearscreen();
-	std::cout << "Welcome in vector tester." << std::endl;
-	while (1)
-	{
-		std::cout << "Select a thing you want to test in this list" << std::endl;
-		std::cout << "0 : empty() | op[] | push() | size() | capacity() | max_size()" << std::endl;
-		std::cout << "1 : at() | front() | back()" << std::endl;
-		std::cout << "2 : reserve() | resize()" << std::endl;
-		std::cout << "3 : pop_back()" << std::endl;
-		std::cout << "4 : iterators" << std::endl;
-		std::cout << "5 : reverse_iterators" << std::endl;
-		std::cout << "6 : constructors" << std::endl;
-		std::cout << "7 : assign" << std::endl;
-		std::cout << "8 : insert" << std::endl;
-		std::cout << "9 : clear erase" << std::endl;
-		std::cout << "10 : swap" << std::endl;
-		std::cout << "11 : Non-member operators" << std::endl;
-		std::cout << "12 : Non-memver swap" << std::endl;
-		std::getline(std::cin, input_line);
-		clearscreen();
-		try
-		{
-			unsigned int input_num = to_int(input_line.c_str());
-			if (input_num > sizeof(f) / sizeof(void *) - 1)
-				throw std::invalid_argument(" ");
-			(*f[input_num])();
-		}
-		catch (std::invalid_argument &e)
-		{
+	v_test_funs.push_back(test_push);
+	v_descriptions.push_back("0 : empty() | op[] | push() | size() | capacity() | max_size()");
 
-			std::cerr << \
-			"🔴 Input error, you can enter only a number existing" \
-			<< std::endl << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << std::endl <<"Press enter to select another test" << std::endl;
-		std::getline(std::cin, input_line);
-		clearscreen();
-	}
-	return (0);
+	v_test_funs.push_back(test_element_access);
+	v_descriptions.push_back("1 : at() | front() | back()");
+
+	v_test_funs.push_back(test_re_serve_size);
+	v_descriptions.push_back("2 : reserve() | resize()");
+
+	v_test_funs.push_back(test_pop_back);
+	v_descriptions.push_back("3 : pop_back()");
+
+	v_test_funs.push_back(test_iterator);
+	v_descriptions.push_back("4 : iterators");
+
+	v_test_funs.push_back(test_reverse_iterator);
+	v_descriptions.push_back("5 : reverse_iterators");
+
+	v_test_funs.push_back(test_constructors);
+	v_descriptions.push_back("6 : constructors");
+
+	v_test_funs.push_back(test_assign);
+	v_descriptions.push_back("7 : assign");
+
+	v_test_funs.push_back(test_insert);
+	v_descriptions.push_back("8 : insert");
+
+	v_test_funs.push_back(test_clear_erase);
+	v_descriptions.push_back("9 : clear erase");
+
+	v_test_funs.push_back(test_swap);
+	v_descriptions.push_back("10 : swap");
+
+	v_test_funs.push_back(test_non_member_ope);
+	v_descriptions.push_back("11 : Non-member operators");
+
+	v_test_funs.push_back(test_non_member_swap);
+	v_descriptions.push_back("12 : Non-memver swap");
+
+	menu(v_test_funs, v_descriptions, "VECTOR");
 }

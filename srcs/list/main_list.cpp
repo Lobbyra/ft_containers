@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main_list.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 10:55:10 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/03 16:15:06 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:36:21 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ inline std::ostream& operator << (std::ostream& os, const std::list<T>& v)
 	return os;
 }
 
-void	test_essentials_std(void)
+static void	test_essentials_std(void)
 {
 	std::cout << "#### STD TEST ESSENTIALS ####" << std::endl;
 	std::cout << "#  push back #" << std::endl;
@@ -130,7 +130,7 @@ void	test_essentials_std(void)
 
 }
 
-void	test_essentials(void)
+static void	test_essentials(void)
 {
 	std::cout << "#### FT TEST ESSENTIALS ####" << std::endl;
 	std::cout << "#  push back #" << std::endl;
@@ -206,7 +206,7 @@ void	test_essentials(void)
 	test_essentials_std();
 }
 
-void	test_capacity_std(void)
+static void	test_capacity_std(void)
 {
 	std::cout << "#### STD CAPACITY TEST ####" << std::endl;
 	std::cout << "For a string list : { need, to, finish, this, project }" << std::endl;
@@ -230,7 +230,7 @@ void	test_capacity_std(void)
 	std::cout << "lst2.empty() = " << std::boolalpha << lst2.empty() << std::endl << std::endl;
 }
 
-void	test_capacity(void)
+static void	test_capacity(void)
 {
 	std::cout << "#### FT CAPACITY TEST ####" << std::endl;
 	std::cout << "For a string list : { need, to, finish, this, project }" << std::endl;
@@ -256,7 +256,7 @@ void	test_capacity(void)
 	test_capacity_std();
 }
 
-void	test_iterator_std(void)
+static void	test_iterator_std(void)
 {
 	std::list<std::string> lst;
 
@@ -295,7 +295,7 @@ void	test_iterator_std(void)
 	std::cout << *it2 << std::endl << std::endl;
 }
 
-void	test_iterator(void)
+static void	test_iterator(void)
 {
 	ft::list<std::string> lst;
 
@@ -335,7 +335,7 @@ void	test_iterator(void)
 	test_iterator_std();
 }
 
-void	test_constructors_std(void)
+static void	test_constructors_std(void)
 {
 	std::cout << "#### STD CONSTRUCTORS TEST ####" << std::endl;
 	std::cout << "# FILL #" << std::endl << std::endl;
@@ -379,7 +379,7 @@ void	test_constructors_std(void)
 	std::cout << "}" << std::endl << std::endl;
 }
 
-void	test_constructors(void)
+static void	test_constructors(void)
 {
 	std::cout << "#### FT CONSTRUCTORS TEST ####" << std::endl;
 	std::cout << "# FILL #" << std::endl << std::endl;
@@ -413,7 +413,7 @@ void	test_constructors(void)
 	test_constructors_std();
 }
 
-void	test_operator_over_ite_std(void)
+static void	test_operator_over_ite_std(void)
 {
 	std::cout << "#### STD OVERLOAD OPERATOR TEST ####" << std::endl;
 	std::cout << "# operator==() #" << std::endl;
@@ -462,7 +462,7 @@ void	test_operator_over_ite_std(void)
 	std::cout << "it_end.operator->() = " << it_end.operator->() << std::endl;
 }
 
-void	test_operator_over_ite(void)
+static void	test_operator_over_ite(void)
 {
 	std::cout << "#### FT OVERLOAD OPERATOR TEST ####" << std::endl;
 	std::cout << "# operator==() #" << std::endl;
@@ -510,7 +510,7 @@ void	test_operator_over_ite(void)
 	test_operator_over_ite_std();
 }
 
-void	test_modifiers_one_std(void)
+static void	test_modifiers_one_std(void)
 {
 	std::cout << "#### STD MODIFIERS PART ONE ####" << std::endl;
 	std::cout << "#### CLEAR ####" << std::endl;
@@ -640,7 +640,7 @@ void	test_modifiers_one_std(void)
 	std::cout << "animal list after insert : " << animals << std::endl << std::endl;
 }
 
-void	test_modifiers_one(void)
+static void	test_modifiers_one(void)
 {
 	std::cout << "#### FT MODIFIERS PART ONE ####" << std::endl;
 	std::cout << "#### CLEAR ####" << std::endl;
@@ -802,7 +802,7 @@ void	test_modifiers_one(void)
 
 }
 
-void	test_modifiers_two(void)
+static void	test_modifiers_two(void)
 {
 	std::cout << "#### FT MODIFIERS PART TWO ####" << std::endl;
 	std::cout << "#### ERASE ####" << std::endl;
@@ -927,7 +927,7 @@ std::ostream	&operator<<(std::ostream &o, potato const &i)
 	return (o);
 }
 
-void	test_operations_splice_std(void)
+static void	test_operations_splice_std(void)
 {
 	std::cout << "#### STD OPERATIONS SPLICE ####" << std::endl;
 	std::cout << "#- SINGLE ELEMENT -#" << std::endl;
@@ -989,7 +989,7 @@ void	test_operations_splice_std(void)
 	std::cout << "& lst_potatoes = " << lst_potatoes << std::endl << std::endl;
 }
 
-void	test_operations_splice(void)
+static void	test_operations_splice(void)
 {
 	std::cout << "#### FT OPERATIONS SPLICE ####" << std::endl;
 	std::cout << "#- SINGLE ELEMENT -#" << std::endl;
@@ -1193,7 +1193,7 @@ struct is_near {
   { return (fabs(first-second)<5.0); }
 };
 
-void	test_operations_unique_std(void)
+static void	test_operations_unique_std(void)
 {
 	std::cout << "#### STD UNIQUE MERGE TEST ####" << std::endl;
 	std::cout << "#### UNIQUE ####" << std::endl;
@@ -1267,7 +1267,7 @@ void	test_operations_unique_std(void)
 	std::cout << "Now lst_floats : " << lst_floats << std::endl << std::endl;
 }
 
-void	test_operations_unique(void)
+static void	test_operations_unique(void)
 {
 	std::cout << "#### FT UNIQUE MERGE TEST ####" << std::endl;
 	std::cout << "#### UNIQUE ####" << std::endl;
@@ -1346,7 +1346,7 @@ void	test_operations_unique(void)
 template <typename T>
 static bool	superior_comp(T &lvalue, T &rvalue) { return (lvalue > rvalue); };
 
-void	test_operations_sort_std(void)
+static void	test_operations_sort_std(void)
 {
 std::cout << "#### STD OPERATIONS SORT TEST ####" << std::endl;
 	std::cout << "#### WITHOUT CONDITION ####" << std::endl;
@@ -1466,7 +1466,7 @@ std::cout << "#### STD OPERATIONS SORT TEST ####" << std::endl;
 
 }
 
-void	test_operations_sort(void)
+static void	test_operations_sort(void)
 {
 
 	std::cout << "#### FT OPERATIONS SORT TEST ####" << std::endl;
@@ -1588,7 +1588,7 @@ void	test_operations_sort(void)
 	test_operations_sort_std();
 }
 
-void	test_operations_reverse_std(void)
+static void	test_operations_reverse_std(void)
 {
 	std::cout << "#### STD OPERATIONS REVERSE ####" << std::endl;
 
@@ -1643,7 +1643,7 @@ void	test_operations_reverse_std(void)
 	std::cout << "lst_empty : " << lst_empty << std::endl << std::endl;
 }
 
-void	test_operations_reverse(void)
+static void	test_operations_reverse(void)
 {
 	std::cout << "#### FT OPERATIONS REVERSE ####" << std::endl;
 
@@ -1700,7 +1700,7 @@ void	test_operations_reverse(void)
 	test_operations_reverse_std();
 }
 
-void	test_non_member_ope_std(void)
+static void	test_non_member_ope_std(void)
 {
 	std::cout << "#### STD NON-MEMBER OPERATORS TEST ####" << std::endl;
 	std::cout << "#- EQUAL & NON-EQUAL -#" << std::endl;
@@ -1771,7 +1771,7 @@ void	test_non_member_ope_std(void)
 	std::cout << "lst_nums2 >= lst_nums1 = " << (lst_nums2 >= lst_nums1) << std::endl;
 }
 
-void	test_non_member_ope(void)
+static void	test_non_member_ope(void)
 {
 	std::cout << "#### FT NON-MEMBER OPERATORS TEST ####" << std::endl;
 	std::cout << "#- EQUAL & NON-EQUAL -#" << std::endl;
@@ -1844,7 +1844,7 @@ void	test_non_member_ope(void)
 	test_non_member_ope_std();
 }
 
-void	test_non_member_swap_std(void)
+static void	test_non_member_swap_std(void)
 {
 	std::cout << "#### STD NON-MEMBER SWAP ####" << std::endl;
 
@@ -1860,7 +1860,7 @@ void	test_non_member_swap_std(void)
 	std::cout << "lst_nums_b : " << lst_nums_b << std::endl << std::endl;
 }
 
-void	test_non_member_swap(void)
+static void	test_non_member_swap(void)
 {
 	std::cout << "#### FT NON-MEMBER SWAP ####" << std::endl;
 
@@ -1881,7 +1881,7 @@ void	test_non_member_swap(void)
 bool mycomparison (double first, double second)
 { return ( int(first)<int(second) ); }
 
-void	test_operations_merge_std(void)
+static void	test_operations_merge_std(void)
 {
 	std::cout << "#### STD OPERATIONS MERGE TEST ####" << std::endl;
 	std::cout << "#- MERGE WITHOUT CONDITION -#" << std::endl << std::endl;
@@ -1946,7 +1946,7 @@ void	test_operations_merge_std(void)
 
 }
 
-void	test_operations_merge(void)
+static void	test_operations_merge(void)
 {
 	std::cout << "#### FT OPERATIONS MERGE TEST ####" << std::endl;
 	std::cout << "#- MERGE WITHOUT CONDITION -#" << std::endl;
@@ -2012,71 +2012,57 @@ void	test_operations_merge(void)
 	test_operations_merge_std();
 }
 
-int		main(void)
+#include "../test_tools/utils_tester.hpp"
+
+void	main_list(void)
 {
-	std::string		input_line;
-	void (*f[])(void) =
-	{
-		test_essentials,
-		test_capacity,
-		test_iterator,
-		test_constructors,
-		test_operator_over_ite,
-		test_modifiers_one,
-		test_modifiers_two,
-		test_operations_splice,
-		test_operations_remove,
-		test_operations_unique,
-		test_operations_sort,
-		test_operations_reverse,
-		test_non_member_ope,
-		test_non_member_swap,
-		test_operations_merge
-	};
+	std::vector<void(*)(void)>	v_test_functions;
+	std::vector<std::string>	v_description;
 
-	clearscreen();
-	std::cout << "Welcome in LIST tester." << std::endl << std::endl;
-	while (1)
-	{
-		std::cout << "Select a thing you want to test in this list" << std::endl;
-		std::cout << "0 : ESSENTIALS : push(front | back)() | pop(front | back)() | front() | back()" << std::endl;
-		std::cout << "1 : CAPACITY : empty() | size()" << std::endl;
-		std::cout << "2 : ITERATOR ESSENTIALS : begin() | end() | it++ | it--" << std::endl;
-		std::cout << "3 : LIST CONSTRUCTORS : fill | range | copy" << std::endl;
-		std::cout << "4 : ITERATOR OPE OVERLOAD" << std::endl;
-		std::cout << "5 : MODIFIERS PART ONE : clear | assign | insert" << std::endl;
-		std::cout << "6 : MODIFIERS PART TWO : erase | resize | swap" << std::endl;
-		std::cout << "7 : OPERATIONS : splice" << std::endl;
-		std::cout << "8 : OPERATIONS : remove | remove_if" << std::endl;
-		std::cout << "9 : OPERATIONS : unique" << std::endl;
-		std::cout << "10 : OPERATIONS : sort" << std::endl;
-		std::cout << "11 : OPERATIONS : reverse" << std::endl;
-		std::cout << "12 : NON-MEMBERS : operator overloads" << std::endl;
-		std::cout << "13 : NON-MEMBERS : swap" << std::endl;
-		std::cout << "14 : OPERATIONS : merge" << std::endl;
-		std::getline(std::cin, input_line);
-		clearscreen();
-		try
-		{
-			unsigned int input_num = to_int(input_line.c_str());
-			if (input_num > sizeof(f) / sizeof(void *) - 1)
-				throw std::invalid_argument(" ");
-			(*f[input_num])();
-		}
-		catch (std::invalid_argument &e)
-		{
+	v_test_functions.push_back(test_essentials);
+	v_description.push_back("0 : ESSENTIALS : push(front | back)() | pop(front | back)() | front() | back()");
 
-			std::cerr << \
-			"🔴 Input error, you can enter only a number existing" \
-			<< std::endl << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << std::endl <<"Press enter to select another test" << std::endl;
-		std::getline(std::cin, input_line);
-		clearscreen();
-	}
-	return (0);
+	v_test_functions.push_back(test_capacity);
+	v_description.push_back("1 : CAPACITY : empty() | size()");
+
+	v_test_functions.push_back(test_iterator);
+	v_description.push_back("2 : ITERATOR ESSENTIALS : begin() | end() | it++ | it--");
+
+	v_test_functions.push_back(test_constructors);
+	v_description.push_back("3 : LIST CONSTRUCTORS : fill | range | copy");
+
+	v_test_functions.push_back(test_operator_over_ite);
+	v_description.push_back("4 : ITERATOR OPE OVERLOAD");
+
+	v_test_functions.push_back(test_modifiers_one);
+	v_description.push_back("5 : MODIFIERS PART ONE : clear | assign | insert");
+
+	v_test_functions.push_back(test_modifiers_two);
+	v_description.push_back("6 : MODIFIERS PART TWO : erase | resize | swap");
+
+	v_test_functions.push_back(test_operations_splice);
+	v_description.push_back("7 : OPERATIONS : splice");
+
+	v_test_functions.push_back(test_operations_remove);
+	v_description.push_back("8 : OPERATIONS : remove | remove_if");
+
+	v_test_functions.push_back(test_operations_unique);
+	v_description.push_back("9 : OPERATIONS : unique");
+
+	v_test_functions.push_back(test_operations_sort);
+	v_description.push_back("10 : OPERATIONS : sort");
+
+	v_test_functions.push_back(test_operations_reverse);
+	v_description.push_back("11 : OPERATIONS : reverse");
+
+	v_test_functions.push_back(test_non_member_ope);
+	v_description.push_back("12 : NON-MEMBERS : operator overloads");
+
+	v_test_functions.push_back(test_non_member_swap);
+	v_description.push_back("13 : NON-MEMBERS : swap");
+
+	v_test_functions.push_back(test_operations_merge);
+	v_description.push_back("14 : OPERATIONS : merge");
+
+	menu(v_test_functions, v_description, "LIST");
 }

@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 15:09:36 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/05 10:36:57 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/17 09:06:44 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,6 @@
 
 # include <vector>
 # include <iostream>
-
-namespace ft
-{
-	void print_caca(void) { std::cout << "CACA FT" << std::endl; }
-}
-
-namespace std
-{
-	void print_caca(void) { std::cout << "CACA STD" << std::endl; }
-}
 
 # define FT_TEST false
 # define STD_TEST true
