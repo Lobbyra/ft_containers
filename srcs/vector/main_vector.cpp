@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 15:47:43 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 12:31:07 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:03:04 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1325,7 +1325,7 @@ static void	test_insert_std(void)
 	std::cout << v3[v3.size() - 1];
 	std::cout << "}" << std::endl << std::endl;
 
-	v3.insert(v3.begin() + 6, 1,"🍌");
+	v3.insert(v3.begin() + 6, 3,"🍌");
 	std::cout << "v3.insert(v3.begin() + 6, 3,\"🍌\");" << std::endl << std::endl;
 	std::cout << "v3 now = ";
 	std::cout << "{";
@@ -1501,7 +1501,7 @@ static void	test_insert(void)
 	std::cout << v3[v3.size() - 1];
 	std::cout << "}" << std::endl << std::endl;
 
-	v3.insert(v3.begin() + 6, 1,"🍌");
+	v3.insert(v3.begin() + 6, 3,"🍌");
 	std::cout << "v3.insert(v3.begin() + 6, 3,\"🍌\");" << std::endl << std::endl;
 	std::cout << "v3 now = ";
 	std::cout << "{";

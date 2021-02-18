@@ -33,7 +33,7 @@ $(NAME)		:	$(OBJS)
 				$(CXX) -o $(NAME) $(CFLAGS) $(OBJS)
 
 san			:	$(OBJS)
-				$(CXX) -o $(NAME) -fsanitize=address $(CFLAGS) $(OBJS)
+				$(CXX) -o $(NAME) -fsanitize=address $(CXXFLAGS) $(OBJS)
 
 clean		:
 				rm -rf $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:03:12 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 17:55:18 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:33:18 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1477,6 +1477,51 @@ struct	strLenGreater
 	}
 };
 
+static void	test_other_compare_std(void)
+{
+	print_header("STD OTHER COMPARE TEST");
+
+	std::map<int, int, std::greater<int> >	mymap;
+	std::cout << "std::map<int, int, std::greater<int> >	mymap;" << std::endl << std::endl;
+
+	mymap[59] = 59;
+	mymap[26] = 26;
+	mymap[68] = 68;
+	mymap[7] = 7;
+	mymap[43] = 43;
+	mymap[65] = 65;
+	mymap[77] = 77;
+	mymap[1] = 1;
+
+	std::cout << "mymap : " << std::endl << mymap << std::endl;
+
+	std::map<std::string, std::string, strLenLess<std::string> >	str_str_map;
+	std::cout << "std::map<std::string, std::string, strLenGreater<int> >  std_str_map;" << std::endl << std::endl;
+
+	str_str_map["Fils"] = "Fils";
+	str_str_map["Corde"] = "Corde";
+	str_str_map["Cactus"] = "Cactus";
+	str_str_map["Section"] = "Section";
+	str_str_map["Feuillet"] = "Feuillet";
+	str_str_map["Effacement"] = "Effacement";
+	str_str_map["Radiographie"] = "Radiographie";
+
+	std::cout << "str_str_map : " << std::endl << str_str_map << std::endl;
+
+	std::map<std::string, std::string, strLenGreater<std::string> >	another_map;
+	std::cout << "std::map<std::string, std::string, strLenGreater<int> >  another_map;" << std::endl << std::endl;
+
+	another_map["Fils"] = "Fils";
+	another_map["Corde"] = "Corde";
+	another_map["Cactus"] = "Cactus";
+	another_map["Section"] = "Section";
+	another_map["Feuillet"] = "Feuillet";
+	another_map["Effacement"] = "Effacement";
+	another_map["Radiographie"] = "Radiographie";
+
+	std::cout << "another_map : " << std::endl << another_map << std::endl;
+}
+
 static void	test_other_compare(void)
 {
 	print_header("FT OTHER COMPARE TEST");
@@ -1502,7 +1547,6 @@ static void	test_other_compare(void)
 	str_str_map["Corde"] = "Corde";
 	str_str_map["Cactus"] = "Cactus";
 	str_str_map["Section"] = "Section";
-	str_str_map["Caravane"] = "Caravane";
 	str_str_map["Feuillet"] = "Feuillet";
 	str_str_map["Effacement"] = "Effacement";
 	str_str_map["Radiographie"] = "Radiographie";
@@ -1516,12 +1560,13 @@ static void	test_other_compare(void)
 	another_map["Corde"] = "Corde";
 	another_map["Cactus"] = "Cactus";
 	another_map["Section"] = "Section";
-	another_map["Caravane"] = "Caravane";
 	another_map["Feuillet"] = "Feuillet";
 	another_map["Effacement"] = "Effacement";
 	another_map["Radiographie"] = "Radiographie";
 
 	std::cout << "another_map : " << std::endl << another_map << std::endl;
+
+	test_other_compare_std();
 }
 
 void	main_map(void)

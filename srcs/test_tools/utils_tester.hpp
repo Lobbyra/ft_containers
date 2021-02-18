@@ -6,7 +6,7 @@
 /*   By: jecaudal <jecaudal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 15:09:36 by jecaudal          #+#    #+#             */
-/*   Updated: 2021/02/17 16:50:47 by jecaudal         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:30:57 by jecaudal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,21 @@ std::ostream	&operator<<(std::ostream &o, std::map<Tkey, Tvalue> &i)
 		return (o);
 	}
 	for (typename std::map<Tkey, Tvalue>::const_iterator it = i.begin();
+		 it != i.end();
+		 it++)
+		o << *it << std::endl;
+	return (o);
+};
+
+template <typename Tkey, typename Tvalue, class Compare>
+std::ostream	&operator<<(std::ostream &o, std::map<Tkey, Tvalue, Compare> &i)
+{
+	if (i.size() == 0)
+	{
+		o << "{}";
+		return (o);
+	}
+	for (typename std::map<Tkey, Tvalue, Compare>::const_iterator it = i.begin();
 		 it != i.end();
 		 it++)
 		o << *it << std::endl;
