@@ -32,7 +32,7 @@
 - Documentation : Qu'est-ce qu'un conteneur ?
 - Documentation : Quelles sont les spécificitées de chaque types conteneurs ?
 - Réalisation : Ecriture des conteneurs du plus facile au plus difficile.
-  - stack -> queu -> vector -> list -> map
+  - vector -> list -> queue -> stack -> map
   > Je préfere avoir de bonnes connaissances en réalisation de conteneurs avant de m'attaquer à la technique des listes chainées et surtout des arbres binaires.
 
 ### Sous-catégories d'explications
